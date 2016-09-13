@@ -16,3 +16,16 @@ db:
   volumes:
     - .:/data/app
 
+redis:
+  build: docker-images/redis/
+  volumes:
+    - .:/data/app
+
+celery:
+  build: docker-images/celery/
+  environment:
+    CELERY_BROKER_URL: redis://redis
+  volumes:
+    - .:/data/app
+  links:
+    - 'redis'

@@ -4,4 +4,15 @@ web:
     - 5000:5000
   volumes:
     - .:/data/app
+  links:
+    - 'db'
+
+db:
+  build: db/
+  environment:
+    POSTGRES_PASSWORD: password
+  ports:
+    - 5432:5432
+  volumes:
+    - .:/data/app
 

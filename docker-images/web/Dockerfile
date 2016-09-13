@@ -10,7 +10,7 @@ ENV FLASK_APP app.py
 COPY requirements.txt /usr/src/app/
 RUN pip install -r /usr/src/app/requirements.txt
 
-WORKDIR /data/app/web/app
-COPY app/entrypoint.sh /data/app/web/app/
+WORKDIR /data/app/app
+COPY entrypoint.sh /data/app/
 
-CMD ["sh", "entrypoint.sh"]
+CMD ["sh", "../docker-images/web/entrypoint.sh"]

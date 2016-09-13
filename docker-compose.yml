@@ -29,3 +29,14 @@ celery:
     - .:/data/app
   links:
     - 'redis'
+
+jupyter:
+  build: docker-images/jupyter/
+  ports:
+    - 5588:8888
+  volumes:
+    - .:/data/app
+    - ./notebooks:/home/jovyan/work
+  environment:
+    GRANT_SUDO: 'yes'
+

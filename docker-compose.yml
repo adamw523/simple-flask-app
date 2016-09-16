@@ -40,3 +40,8 @@ jupyter:
   environment:
     GRANT_SUDO: 'yes'
 
+node:
+  build: docker-images/node/
+  volumes:
+    - .:/data/app
+

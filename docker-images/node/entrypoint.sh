@@ -15,5 +15,7 @@ usermod -u $HOST_UID node
 # change node GID to $GID
 groupmod -g $HOST_GID node
 
-bash
+echo "Running the following command in node-runner..."
+echo "$@"
 
+exec sudo node "$@"

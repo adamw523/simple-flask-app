@@ -5,8 +5,4 @@ RUN useradd -m node -s /bin/bash
 
 ADD entrypoint.sh /
 
-
 ENTRYPOINT ["/entrypoint.sh"]
-
-
-

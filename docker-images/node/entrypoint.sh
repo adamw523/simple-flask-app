@@ -18,4 +18,5 @@ groupmod -g $HOST_GID node
 echo "Running the following command in node-runner..."
 echo "$@"
 
-exec sudo node "$@"
+cd /node
+exec sudo -u node "$@"

@@ -8,6 +8,9 @@ services:
       - .:/data/app
     links:
       - 'db'
+    environment:
+      FLASK_APP: app.py
+      FLASK_DEBUG: 1
 
   db:
     build: docker-images/db/
@@ -41,9 +44,10 @@ services:
       - ./notebooks:/home/jovyan/work
     environment:
       GRANT_SUDO: 'yes'
+      FLASK_APP: app.py
 
-  node:
-    build: docker-images/node/
-    volumes:
-      - .:/data/app
+#  node:
+#    build: docker-images/node/
+#    volumes:
+#      - .:/data/app
 

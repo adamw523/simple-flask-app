@@ -13,4 +13,4 @@ RUN pip install -r /usr/src/app/requirements.txt
 WORKDIR /data/app/app
 COPY entrypoint.sh /data/app/
 
-CMD ["sh", "../docker-images/web/entrypoint.sh"]
+CMD ["flask", "run", "--host=0.0.0.0"]

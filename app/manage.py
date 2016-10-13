@@ -4,11 +4,6 @@ import os
 
 from app import app, db
 
-# app = Flask(__name__)
-# app.config.from_pyfile('app.cfg')
-
-print(app)
-
 migrate = Migrate(app, db)
 manager = Manager(app)
 manager.add_command('db', MigrateCommand)
